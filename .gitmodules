@@ -1,0 +1,3 @@
+[submodule "symfony/app"]
+	path = symfony/app
+	url = git@github.com:kamhaal/symfony-app.git
