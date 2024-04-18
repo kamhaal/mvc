@@ -1,0 +1,10 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+quote_api:
+    path: /api/quote
+    controller: App\Controller\QuoteApiController::quote
+    methods: ['GET']
