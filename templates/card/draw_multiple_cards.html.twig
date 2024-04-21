@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Draw Multiple Cards{% endblock %}
+
+{% block body %}
+<h1>Drawn Cards</h1>
+{% if cards is defined %}
+    <div>
+    {% for card_info in cards %}
+        <span class="card {{ card_info.color }}">{{ card_info.card }}</span>
+    {% endfor %}
+    </div>
+{% else %}
+    <p>No cards drawn.</p>
+{% endif %}
+<a href="{{ path('card_index') }}">Back to Home</a>
+{% endblock %}

@@ -9,7 +9,6 @@ header {
 
 main {
     margin: 0 auto;
-    max-width: 400px;
 }
 
 h1 {
@@ -95,4 +94,22 @@ ul.dicearea li{
 }
 .flash-warning:before {
     content: "⚠";
+}
+
+/*
+report
+*/
+.card {
+    font-size: 3em;
+    text-align: center;
+    margin: 5px;
+    background-color: white;
+}
+
+.red {
+    color: red;
+}
+
+.black {
+    color: black;
 }

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Card Game Home{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Card Game</h1>
+<ul>
+    <li><a href="{{ path('show_deck') }}">Show Deck</a></li>
+    <li><a href="{{ path('shuffle_deck') }}">Shuffle Deck</a></li>
+    <li><a href="{{ path('draw_card') }}">Draw a Card</a></li>
+    <li><a href="{{ path('draw_multiple_cards', {'number': 5}) }}">Draw Multiple Cards</a></li>
+    <li><a href="{{ path('session_delete') }}">Reset Session</a></li>
+</ul>
+{% endblock %}

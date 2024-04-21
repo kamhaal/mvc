@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Show Deck{% endblock %}
+
+{% block body %}
+<h1>Deck of Cards</h1>
+
+{% if cards is defined %}
+    <div>
+        {% for card_info in cards %}
+            <span class="card {{ card_info.color }}">{{ card_info.card }}</span>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No cards to display.</p>
+{% endif %}
+<a href="{{ path('card_index') }}">Back to Home</a>
+{% endblock %}
