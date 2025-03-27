@@ -1,4 +1,5 @@
 {
+    "name": "symfony/skeleton",
     "description": "Teacher material",
     "type": "project",
     "license": "proprietary",

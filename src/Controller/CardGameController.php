@@ -16,14 +16,14 @@ class CardGameController extends AbstractController
     {
         return $this->render('card/index.html.twig');
     }
-    
+
     #[Route("/card/deck", name: "show_deck")]
     public function showDeck(SessionInterface $session): Response
     {
         $deck = $session->get('deck', new Deck());
         $session->set('deck', $deck);
         $cards = $deck->getCards();
-    
+
         return $this->render('card/show_deck.html.twig', [
             'cards' => $cards
         ]);
@@ -57,7 +57,7 @@ class CardGameController extends AbstractController
         $deck = $session->get('deck', new Deck());
         $cards = $deck->drawMultipleCards($number);
         $session->set('deck', $deck);
-    
+
         return $this->render('card/draw_multiple_cards.html.twig', [
             'cards' => $cards
         ]);
@@ -70,5 +70,5 @@ class CardGameController extends AbstractController
         $this->addFlash('success', 'Nu är sessionen raderad');
         return $this->redirectToRoute('card_index');
     }
-    
+
 }

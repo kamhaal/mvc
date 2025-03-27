@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Card;
 
 class Deck
@@ -100,5 +101,5 @@ class Deck
     {
         return array_splice($this->cards, 0, $number);
     }
-    
+
 }
