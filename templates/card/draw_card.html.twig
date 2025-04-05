@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Draw a Card{% endblock %}
+
 {% block body %}
-<h1>Drawn Card</h1>
-{% if card %}
-    <p>Card: <span class="card {{ card.color }}">{{ card.card }}</span></p>
+<h1>Draget kort</h1>
+
+{% if card is defined %}
+    <p><span class="card {{ card.color }}">{{ card.card }}</span></p>
 {% else %}
-    <p>No card drawn.</p>
+    <p>Inga kort kvar att dra!</p>
 {% endif %}
-<a href="{{ path('card_index') }}">Back to Home</a>
+
+<a href="{{ path('card_landing') }}">Tillbaka</a>
 {% endblock %}

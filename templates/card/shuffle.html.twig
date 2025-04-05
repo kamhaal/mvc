@@ -1,15 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Draw Multiple Cards{% endblock %}
+{% block title %}Shuffled Deck{% endblock %}
 
 {% block body %}
-<h1>Dragna kort</h1>
+<h1>Blandad kortlek</h1>
 
 <ul>
     {% for card in cards %}
-        <li>
-            <span class="card {{ card.color }}">{{ card.card }}</span>
-        </li>
+        <li><span class="card {{ card.color }}">{{ card.card }}</span></li>
     {% endfor %}
 </ul>
 

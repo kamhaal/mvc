@@ -13,74 +13,26 @@ class Deck
 
     private function createDeck()
     {
-        $Hearts = [
-            ['card' => "🂱", 'color' => 'red'],
-            ['card' => "🂲", 'color' => 'red'],
-            ['card' => "🂳", 'color' => 'red'],
-            ['card' => "🂴", 'color' => 'red'],
-            ['card' => "🂵", 'color' => 'red'],
-            ['card' => "🂶", 'color' => 'red'],
-            ['card' => "🂷", 'color' => 'red'],
-            ['card' => "🂸", 'color' => 'red'],
-            ['card' => "🂹", 'color' => 'red'],
-            ['card' => "🂺", 'color' => 'red'],
-            ['card' => "🂻", 'color' => 'red'],
-            ['card' => "🂽", 'color' => 'red'],
-            ['card' => "🂾", 'color' => 'red'],
+        $cards = [];
+    
+        $symbols = [
+            'Spades' => ['🂡','🂢','🂣','🂤','🂥','🂦','🂧','🂨','🂩','🂪','🂫','🂭','🂮'],
+            'Hearts' => ['🂱','🂲','🂳','🂴','🂵','🂶','🂷','🂸','🂹','🂺','🂻','🂽','🂾'],
+            'Diamonds' => ['🃁','🃂','🃃','🃄','🃅','🃆','🃇','🃈','🃉','🃊','🃋','🃍','🃎'],
+            'Clubs' => ['🃑','🃒','🃓','🃔','🃕','🃖','🃗','🃘','🃙','🃚','🃛','🃝','🃞']
         ];
-
-        $Diamonds = [
-            ['card' => "🃁", 'color' => 'red'],
-            ['card' => "🃂", 'color' => 'red'],
-            ['card' => "🃃", 'color' => 'red'],
-            ['card' => "🃄", 'color' => 'red'],
-            ['card' => "🃅", 'color' => 'red'],
-            ['card' => "🃆", 'color' => 'red'],
-            ['card' => "🃇", 'color' => 'red'],
-            ['card' => "🃈", 'color' => 'red'],
-            ['card' => "🃉", 'color' => 'red'],
-            ['card' => "🃊", 'color' => 'red'],
-            ['card' => "🃋", 'color' => 'red'],
-            ['card' => "🃍", 'color' => 'red'],
-            ['card' => "🃎", 'color' => 'red'],
-        ];
-
-        $Clubs = [
-            ['card' => "🃑", 'color' => 'black'],
-            ['card' => "🃒", 'color' => 'black'],
-            ['card' => "🃓", 'color' => 'black'],
-            ['card' => "🃔", 'color' => 'black'],
-            ['card' => "🃕", 'color' => 'black'],
-            ['card' => "🃖", 'color' => 'black'],
-            ['card' => "🃗", 'color' => 'black'],
-            ['card' => "🃘", 'color' => 'black'],
-            ['card' => "🃙", 'color' => 'black'],
-            ['card' => "🃚", 'color' => 'black'],
-            ['card' => "🃛", 'color' => 'black'],
-            ['card' => "🃝", 'color' => 'black'],
-            ['card' => "🃞", 'color' => 'black'],
-        ];
-
-        $Spades = [
-            ['card' => "🂡", 'color' => 'black'],
-            ['card' => "🂢", 'color' => 'black'],
-            ['card' => "🂣", 'color' => 'black'],
-            ['card' => "🂤", 'color' => 'black'],
-            ['card' => "🂥", 'color' => 'black'],
-            ['card' => "🂦", 'color' => 'black'],
-            ['card' => "🂧", 'color' => 'black'],
-            ['card' => "🂨", 'color' => 'black'],
-            ['card' => "🂩", 'color' => 'black'],
-            ['card' => "🂪", 'color' => 'black'],
-            ['card' => "🂫", 'color' => 'black'],
-            ['card' => "🂭", 'color' => 'black'],
-            ['card' => "🂮", 'color' => 'black'],
-        ];
-
-        $cards = array_merge($Spades, $Diamonds, $Clubs, $Hearts);
-
+    
+        foreach ($symbols as $suit => $cardsInSuit) {
+            $color = in_array($suit, ['Hearts', 'Diamonds']) ? 'red' : 'black';
+    
+            foreach ($cardsInSuit as $card) {
+                $cards[] = ['card' => $card, 'color' => $color];
+            }
+        }
+    
         return $cards;
     }
+    
 
     public function getCards()
     {

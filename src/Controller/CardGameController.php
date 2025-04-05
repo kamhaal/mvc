@@ -5,9 +5,8 @@ namespace App\Controller;
 use App\Card\Deck;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Routing\Annotation\Route;
 
 class CardGameController extends AbstractController
 {
@@ -17,15 +16,32 @@ class CardGameController extends AbstractController
         return $this->render('card/index.html.twig');
     }
 
-    #[Route("/card/deck", name: "show_deck")]
+    #[Route("/card", name: "card_landing")]
+    public function cardLanding(): Response
+    {
+        return $this->render('card/index.html.twig');
+    }
+
+    #[Route("/card/deck", name: "card_show")]
     public function showDeck(SessionInterface $session): Response
     {
         $deck = $session->get('deck', new Deck());
         $session->set('deck', $deck);
-        $cards = $deck->getCards();
-
         return $this->render('card/show_deck.html.twig', [
-            'cards' => $cards
+            'cards' => $deck->getCards()
+        ]);
+    }
+
+    #[Route("/card/shuffle", name: "card_shuffle")]
+    public function shuffle(SessionInterface $session): Response
+    {
+        $deck = new Deck();
+        $deck->shuffle();
+
+        $session->set('deck', $deck);
+
+        return $this->render('card/shuffle.html.twig', [
+            'cards' => $deck->getCards()
         ]);
     }
 
@@ -36,10 +52,10 @@ class CardGameController extends AbstractController
         $deck->shuffle();
         $session->set('deck', $deck);
 
-        return $this->redirectToRoute('show_deck');
+        return $this->redirectToRoute('card_show');
     }
 
-    #[Route("/card/deck/draw", name: "draw_card")]
+    #[Route("/card/deck/draw", name: "card_draw")]
     public function drawCard(SessionInterface $session): Response
     {
         $deck = $session->get('deck', new Deck());
@@ -51,7 +67,7 @@ class CardGameController extends AbstractController
         ]);
     }
 
-    #[Route("/card/deck/draw/{number<\d+>}", name: "draw_multiple_cards")]
+    #[Route("/card/deck/draw/{number<\d+>}", name: "card_draw_multiple")]
     public function drawMultipleCards(SessionInterface $session, int $number): Response
     {
         $deck = $session->get('deck', new Deck());
@@ -63,6 +79,14 @@ class CardGameController extends AbstractController
         ]);
     }
 
+    #[Route("/card/session/reset", name: "card_reset_session")]
+    public function resetSession(SessionInterface $session): Response
+    {
+        $session->clear();
+        $this->addFlash('success', 'Sessionen är återställd.');
+        return $this->redirectToRoute('card_landing');
+    }
+
     #[Route("/session/delete", name: "session_delete")]
     public function deleteSession(SessionInterface $session): Response
     {
@@ -71,4 +95,13 @@ class CardGameController extends AbstractController
         return $this->redirectToRoute('card_index');
     }
 
+    #[Route("/card/session", name: "card_session")]
+    public function cardSession(SessionInterface $session): Response
+    {
+        $deck = $session->get('deck', new Deck());
+
+        return $this->render('card/session.html.twig', [
+            'deck' => $deck->getCards()
+        ]);
+    }
 }

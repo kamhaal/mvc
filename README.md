@@ -57,3 +57,25 @@ Detta är en webbapplikation utvecklad med MVC-arkitektur (Model-View-Controller
 - `webpack.config.js` – Webpack-konfiguration
 
 ---
+
+## Syfte med projektet
+
+Målet med projektet är att bygga upp ett tärningsspel där man:
+
+- Utvecklar spelets logik i backend (PHP)
+- Bygger upp en webbapplikation med Symfony
+- Följer MVC-principer
+- Lär sig använda verktyg som Git, Docker, Composer och testning med PHPUnit
+
+Det är en del av kursmomenten i kursen "Webbprogrammering med PHP och MVC".
+
+---
+
+## Kom igång
+
+Så här kör du projektet lokalt:
+
+1. Klona repot:
+   ```bash
+   git clone git@github.com:kamhaal/mvc.git
+   cd mvc
