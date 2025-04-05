@@ -16,16 +16,34 @@ Idag lärde jag mig om vikten av att följa MVC-arkitekturen för att organisera
 </p>    
      
 
-    <h2 id="kmom02"> kmom02 </h2>
-    <p>  Jag skapade ett kortspel med hjälp av Symfony, ett populärt verktyg för att bygga webbapplikationer. Mitt mål var att göra ett spel där användarna kan blanda, visa och dra kort från en digital kortlek.</p>
-<p>
-För att hantera korten utvecklade jag en del av programmet som kallas för Deck. Den här delen hjälpte till att skapa och hantera korten, som var designade med roliga symboler och färger för att göra dem lätta att känna igen.
-</p>
-<p>
-Jag använde något som kallas sessions i Symfony för att komma ihåg kortleken medan spelarna spelar. Detta var viktigt för att spelet skulle fungera smidigt. 
-För att visa korten använde jag Twig, ett verktyg från Symfony som gör det enkelt att skapa sidor som användarna ser och interagerar med.</p>
+<h2 id="kmom02">kmom02</h2>
 
-<p>Projektet hade några utmaningar, särskilt med att få allt att se bra ut på olika enheter och i olika webbläsare.
- Men att lösa dessa problem lärde mig mycket om hur man bygger robusta webbapplikationer.
- </p>
+<p>
+  I kmom02 har jag byggt ett kortspel med hjälp av Symfony. Spelet låter användaren visa en kortlek, blanda den och dra ett eller flera kort. Alla kort sparas i sessionen så att spelet "kommer ihåg" vilka kort som dragits.
+</p>
+
+<p>
+  Jag skapade en klass som heter <code>Deck</code> som innehåller hela kortleken. Den kan blanda korten och dra ett eller flera kort åt gången. Varje kort har en symbol (t.ex. 🂡) och en färg (svart eller röd).
+</p>
+
+<p>
+  Jag använder Symfony:s <strong>session</strong> för att spara kortleken, så att när man går mellan sidorna behåller spelet sitt tillstånd. Om man drar kort minskar kortleken i sessionen. Jag gjorde också en knapp som nollställer sessionen, och ett <strong>flash-meddelande</strong> som visar “Nu är sessionen raderad”.
+</p>
+
+<p>
+  Jag har byggt en landningssida för kortspelet där det finns länkar till alla funktioner: visa kortlek, blanda, dra kort, se session och nollställ session.
+</p>
+
+<p>
+  Jag har också gjort ett <strong>JSON API</strong> så att man kan använda t.ex. <code>curl</code> för att hämta, blanda och dra kort via webbläsare eller kommandorad. Alla API-svar är i JSON-format och visar vilka kort som dragits och hur många som finns kvar.
+</p>
+
+<p>
+  Det var lite klurigt att få allting att fungera med sessionen och rätt HTTP-metoder, men jag lärde mig mycket av det. Jag har också kört <code>composer csfix</code> för att se till att min kod följer rätt stil.
+</p>
+
+<p>
+  Jag har lärt mig mer om hur man bygger webbappar med Symfony, hur man använder session, flash-meddelanden och hur man jobbar med objektorienterad kod i PHP.
+</p>
+
 {% endblock %}

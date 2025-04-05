@@ -14,25 +14,25 @@ class Deck
     private function createDeck()
     {
         $cards = [];
-    
+
         $symbols = [
             'Spades' => ['🂡','🂢','🂣','🂤','🂥','🂦','🂧','🂨','🂩','🂪','🂫','🂭','🂮'],
             'Hearts' => ['🂱','🂲','🂳','🂴',  '🂵','🂶','🂷','🂸','🂹','🂺','🂻','🂽','🂾'],
             'Diamonds' => ['🃁','🃂','🃃','🃄','🃅','🃆','🃇','🃈','🃉','🃊','🃋','🃍','🃎'],
             'Clubs' => ['🃑','🃒','🃓','🃔','🃕','🃖','🃗','🃘','🃙','🃚','🃛','🃝','🃞']
         ];
-    
+
         foreach ($symbols as $suit => $cardsInSuit) {
             $color = in_array($suit, ['Hearts', 'Diamonds']) ? 'red' : 'black';
-    
+
             foreach ($cardsInSuit as $card) {
                 $cards[] = ['card' => $card, 'color' => $color];
             }
         }
-    
+
         return $cards;
     }
-    
+
 
     public function getCards()
     {

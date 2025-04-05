@@ -3,15 +3,17 @@
 {% block title %}About{% endblock %}
 
 {% block body %}
-    <div class="row">
-        <div class="col-md-6">
-            <h2>Objektorienterade webbteknologier (MVC)</h2>
-            <p>Kursen Objektorienterade webbteknologier, a.k.a. MVC, fokuserar på objektorienterade programmeringstekniker i programmeringsspråket PHP. Klassiska objektorienterade konstruktioner hanteras tillsammans med objektorienterad programmering i webbaserat ramverk tillsammans med databaser samt enhetstestning.</p>
-            <a href="https://github.com/dbwebb-se/mvc" target="_blank">Kursens Git-repo</a>
-        </div>
-        <div class="col-md-6">
-        <img src="{{ asset('build/images/dbwebb.jpg') }}" alt="dbwebb">
-            <a href="https://github.com/kamhaal" target="_blank">Mitt Git-repo</a>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Objektorienterade webbteknologier (MVC)</h2>
+                <p>Kursen Objektorienterade webbteknologier ...</p>
+                <a href="https://github.com/dbwebb-se/mvc" target="_blank">Kursens Git-repo</a>
+            </div>
+            <div class="col-md-6">
+                <img src="{{ asset('build/images/dbwebb.jpg') }}" alt="dbwebb" class="img-fluid mb-2">
+                <a href="https://github.com/kamhaal" target="_blank">Mitt Git-repo</a>
+            </div>
         </div>
     </div>
 {% endblock %}
