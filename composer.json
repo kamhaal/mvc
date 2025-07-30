@@ -88,8 +88,8 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
-        "csfix": "tools/php-cs-fixer/vendor/bin/php-cs-fixer --config=.php-cs-fixer.dist.php fix src tests",
-        "csfix:dry": "tools/php-cs-fixer/vendor/bin/php-cs-fixer --config=.php-cs-fixer.dist.php fix src tests --dry-run -v"
+    "csfix": "vendor/bin/php-cs-fixer fix src tests --config=.php-cs-fixer.dist.php",
+    "csfix:dry": "vendor/bin/php-cs-fixer fix src tests --config=.php-cs-fixer.dist.php --dry-run -v"
     },
     "conflict": {
         "symfony/symfony": "*"
@@ -101,6 +101,7 @@
         }
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.66",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "7.0.*",
         "symfony/css-selector": "7.0.*",
