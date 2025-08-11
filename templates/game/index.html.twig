@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Blackjack 21</h1>
+
+<p>
+    The goal is to get cards with a value as close to 21 as possible without going over.
+    Aces count as 1 or 14. The dealer wins on ties.
+</p>
+
+<p>
+    Click below to start playing.
+</p>
+
+<a href="{{ path('game_play') }}">Start Game</a> |
+<a href="{{ path('game_doc') }}">Documentation</a>
+{% endblock %}
