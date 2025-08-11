@@ -15,20 +15,22 @@
     </head>
     <body>
 
-        <header class="site-header" style="background-image: url({{ asset('img/background.jpg') }})">
+        <header style="background-image: url({{ asset('img/background.jpg') }})">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
         </header>
         <nav>
-            <ul>
+            <ul class="custom-nav">
                 <li><a href="{{ path('about') }}">About</a></li>
                 <li><a href="{{ path('report') }}">Report</a></li>
                 <li><a href="{{ path('lucky_number') }}">Lucky number</a></li>
                 <li><a href="{{ path('lucky') }}">Lucky</a></li>
                 <li><a href="{{ path('pig_start') }}">Pig</a></li>
                 <li><a href="{{ path('card_index') }}">Card Game</a></li>
+                <li><a href="{{ path('game_index') }}">Card game 21</a></li>
             </ul>
         </nav>
+
 
         <main>
         {% block body %}{% endblock %}
@@ -37,7 +39,7 @@
         <footer>
         </footer>
     </body>
-    <footer class="site-footer">
+    <footer class="footer">
     <p>&copy; {{ "now"|date("Y") }} MittProjekt. Alla rättigheter förbehållna.</p>
 </footer>
 
