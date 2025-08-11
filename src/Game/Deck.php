@@ -13,7 +13,7 @@ class Deck
         $ranks = [
             '2' => 2, '3' => 3, '4' => 4, '5' => 5, '6' => 6, '7' => 7,
             '8' => 8, '9' => 9, '10' => 10,
-            'J' => 10, 'Q' => 10, 'K' => 10, 'A' => 1
+            'J' => 10, 'Q' => 10, 'K' => 10, 'A' => 1 // Ace handled later
         ];
 
         foreach ($suits as $suit) {
@@ -31,10 +31,5 @@ class Deck
     public function draw(): ?Card
     {
         return array_shift($this->cards);
-    }
-
-    public function remaining(): int
-    {
-        return count($this->cards);
     }
 }

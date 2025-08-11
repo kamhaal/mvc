@@ -29,14 +29,16 @@ class Hand
             }
         }
 
+        // Ess = 1 eller 14 (enligt uppgift)
         while ($aces > 0 && $total + 13 <= 21) {
-            $total += 13;
+            $total += 13; // 14 istället för 1
             $aces--;
         }
 
         return $total;
     }
 
+    // Hand.php
     public function getAsString(): string
     {
         $cards = [];

@@ -4,9 +4,9 @@ namespace App\Game;
 
 class Card
 {
-    private string $suit;
-    private string $rank;
-    private int $value;
+    private string $suit;  // Hearts, Diamonds, Clubs, Spades
+    private string $rank;  // 2–10, J, Q, K, A
+    private int $value;    // numeric value (A handled in Hand)
 
     public function __construct(string $suit, string $rank, int $value)
     {
@@ -44,7 +44,7 @@ class Card
             'Clubs' => '♣',
             'Spades' => '♠'
         ];
-
+        
         return $this->rank . $symbols[$this->suit];
     }
 }

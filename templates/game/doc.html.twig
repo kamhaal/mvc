@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Game Documentation - Blackjack 21</h1>
+
+<h2>Game Rules</h2>
+<p>
+    The goal is to get a hand value as close to 21 as possible without exceeding it.<br>
+    - Aces count as 1 or 14 points<br>
+    - Face cards (Jack, Queen, King) are worth 10 points<br>
+    - Number cards are worth their face value<br>
+    - The dealer must draw until reaching at least 17 points<br>
+    - The dealer wins in case of a tie
+</p>
+
+<h2>How to Play</h2>
+<ol>
+    <li>Click "Start Game" to begin</li>
+    <li>You will receive two initial cards</li>
+    <li>Choose "Hit" to draw another card</li>
+    <li>Choose "Stand" to keep your current hand</li>
+    <li>If you exceed 21, you lose immediately</li>
+    <li>When you stand, the dealer reveals their cards</li>
+    <li>The highest hand under 21 wins</li>
+</ol>
+
+<h2>Game Classes</h2>
+<ul>
+    <li><strong>Card:</strong> Represents a single playing card</li>
+    <li><strong>Deck:</strong> Manages the 52-card deck</li>
+    <li><strong>Hand:</strong> Calculates card values</li>
+    <li><strong>Player/Dealer:</strong> Manage game participants</li>
+    <li><strong>Game:</strong> Controls game flow and rules</li>
+</ul>
+
+<h2>Flowchart</h2>
+<img src="{{ asset('src="/build/images/game-flowchart.png') }}" alt="Game Flowchart">
+
+<a href="{{ path('game_play') }}">Play Game</a> | 
+<a href="{{ path('game_index') }}">Back to Home</a>
+{% endblock %}
