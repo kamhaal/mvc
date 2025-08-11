@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h2>Blackjack</h2>
+
+<p><b>Your cards:</b> {{ game.getPlayer().getHand().getAsString() }} ({{ game.getPlayer().getHand().getValue() }})</p>
+
+{% if game.getStatus() == 'player_turn' %}
+  <p>
+    <a href="{{ path('game_hit') }}">Hit</a> | 
+    <a href="{{ path('game_stand') }}">Stand</a>
+  </p>
+{% else %}
+  <p><b>Dealer's cards:</b> {{ game.getDealer().getHand().getAsString() }} ({{ game.getDealer().getHand().getValue() }})</p>
+  <p><b>Winner:</b> {{ game.getWinner() == 'Player' ? 'You' : 'Dealer' }}</p>
+  <p>
+    <a href="{{ path('game_new') }}">New game</a> | 
+    <a href="{{ path('game_index') }}">Quit</a>
+  </p>
+{% endif %}
+{% endblock %}
