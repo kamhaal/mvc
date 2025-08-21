@@ -29,9 +29,8 @@ class Hand
             }
         }
 
-        // Ess = 1 eller 14 (enligt uppgift)
         while ($aces > 0 && $total + 13 <= 21) {
-            $total += 13; // 14 istället för 1
+            $total += 13;
             $aces--;
         }
 

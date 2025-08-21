@@ -7,7 +7,7 @@ class Game
     private Deck $deck;
     private Player $player;
     private Dealer $dealer;
-    private string $status = "player_turn"; // player_turn, dealer_turn, finished
+    private string $status = "player_turn";
 
     public function __construct()
     {

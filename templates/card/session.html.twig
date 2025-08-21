@@ -1,19 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Sessionkortlek{% endblock %}
+{% block title %}Session{% endblock %}
 
 {% block body %}
-<h1>Session: nuvarande kortlek</h1>
+<h1>Session</h1>
 
-{% if deck is not empty %}
-    <ul>
-        {% for card in deck %}
-            <li><span class="card {{ card.color }}">{{ card.card }}</span></li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>Ingen kortlek sparad i session.</p>
-{% endif %}
+{% for message in app.flashes('success') %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+{% endfor %}
 
-<a href="{{ path('card_landing') }}">Tillbaka</a>
+<pre>{{ dump(session) }}</pre>
+
+<p><a href="{{ path('session_delete') }}">Delete session</a></p>
+<p><a href="{{ path('card_start') }}">Back to homepage</a></p>
 {% endblock %}

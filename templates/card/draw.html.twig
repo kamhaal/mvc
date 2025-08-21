@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Draw cards{% endblock %}
+
+{% block body %}
+<h1>Draw card</h1>
+
+<div class="card-deck">
+    {% for card in cards %}
+        {{ card.getAsHTML()|raw }}
+    {% else %}
+        <p>No more!</p>
+    {% endfor %}
+</div>
+
+<p>Cards left in the deck: {{ remaining }}</p>
+
+<p>
+    <a href="{{ path('card_deck_draw') }}">Draw another card</a> | 
+    <a href="{{ path('card_start') }}">Back to homepage</a>
+</p>
+{% endblock %}

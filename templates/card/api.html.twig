@@ -1,0 +1,27 @@
+
+
+<h1>Card Game API</h1>
+
+<h2>Available API Routes</h2>
+    
+<div class="api-routes">
+    <h3>Card Game Routes</h3>
+    <ul>
+        <li><a href="{{ path('api_deck') }}">GET /api/deck</a> - Get sorted deck</li>
+        <li>
+            <form action="{{ path('api_shuffle') }}" method="POST" style="display: inline;">
+                <button type="submit" class="btn-link">POST /api/deck/shuffle</button>
+            </form> - Shuffle deck
+        </li>
+        <li>
+            <form action="{{ path('api_draw') }}" method="POST" style="display: inline;">
+                <button type="submit" class="btn-link">POST /api/deck/draw</button>
+            </form> - Draw one card
+        </li>
+        <li>
+            <form action="{{ path('api_draw_number', {number: 5}) }}" method="POST" style="display: inline;">
+                <button type="submit" class="btn-link">POST /api/deck/draw/5</button>
+            </form> - Draw five cards
+        </li>
+    </ul>
+</div>

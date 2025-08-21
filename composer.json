@@ -76,21 +76,22 @@
         "symfony/polyfill-php81": "*",
         "symfony/polyfill-php82": "*"
     },
-    "scripts": {
-        "auto-scripts": {
-            "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd",
-            "importmap:install": "symfony-cmd"
-        },
-        "post-install-cmd": [
-            "@auto-scripts"
-        ],
-        "post-update-cmd": [
-            "@auto-scripts"
-        ],
+"scripts": {
+    "phpunit": "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-html docs/coverage",
+    "auto-scripts": {
+        "cache:clear": "symfony-cmd",
+        "assets:install %PUBLIC_DIR%": "symfony-cmd",
+        "importmap:install": "symfony-cmd"
+    },
+    "post-install-cmd": [
+        "@auto-scripts"
+    ],
+    "post-update-cmd": [
+        "@auto-scripts"
+    ],
     "csfix": "vendor/bin/php-cs-fixer fix src tests --config=.php-cs-fixer.dist.php",
     "csfix:dry": "vendor/bin/php-cs-fixer fix src tests --config=.php-cs-fixer.dist.php --dry-run -v"
-    },
+},
     "conflict": {
         "symfony/symfony": "*"
     },
@@ -102,7 +103,7 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.66",
-        "phpunit/phpunit": "^9.5",
+        "phpunit/phpunit": "^9.6",
         "symfony/browser-kit": "7.0.*",
         "symfony/css-selector": "7.0.*",
         "symfony/debug-bundle": "7.0.*",
