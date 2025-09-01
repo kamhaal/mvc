@@ -69,9 +69,15 @@ class Game
         $p = $this->player->getHand()->getValue();
         $d = $this->dealer->getHand()->getValue();
 
-        if ($p > 21) return "Dealer";
-        if ($d > 21) return "Player";
-        if ($d >= $p) return "Dealer";
+        if ($p > 21) {
+            return "Dealer";
+        }
+        if ($d > 21) {
+            return "Player";
+        }
+        if ($d >= $p) {
+            return "Dealer";
+        }
         return "Player";
     }
 }

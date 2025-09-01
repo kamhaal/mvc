@@ -2,7 +2,8 @@
 
 namespace App\Controller;
 
-use App\Card\Deck;
+// use App\Card\Deck;
+use App\Game\Deck;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -43,8 +44,9 @@ class ApiController extends AbstractController
     public function apiDraw(SessionInterface $session): JsonResponse
     {
         $deck = $session->get('deck', new Deck());
-        $card = $deck->drawCard();
+        $card = $deck->draw();
         $session->set('deck', $deck);
+
         return $this->json([
             'card' => $card,
             'remaining' => count($deck->getCards())

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Entity;
 
 class CardGraphic extends Card
@@ -35,7 +36,7 @@ class CardGraphic extends Card
     {
         $symbol = $this->getAsString();
         $suitClass = $this->suit;
-        
+
         return "<span class=\"card $suitClass\">$symbol</span>";
     }
 }

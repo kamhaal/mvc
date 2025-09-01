@@ -77,7 +77,11 @@
         "symfony/polyfill-php82": "*"
     },
 "scripts": {
-    "phpunit": "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-html docs/coverage",
+    "phpunit": "php bin/phpunit",
+    "test-coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-html docs/coverage",
+    "lint": "vendor/bin/phpcs --standard=PSR12 src tests",
+    "phpdoc": "phpdoc -d src -t docs/api",
+
     "auto-scripts": {
         "cache:clear": "symfony-cmd",
         "assets:install %PUBLIC_DIR%": "symfony-cmd",

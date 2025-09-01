@@ -13,7 +13,7 @@ class Deck
         $ranks = [
             '2' => 2, '3' => 3, '4' => 4, '5' => 5, '6' => 6, '7' => 7,
             '8' => 8, '9' => 9, '10' => 10,
-            'J' => 10, 'Q' => 10, 'K' => 10, 'A' => 1 
+            'J' => 10, 'Q' => 10, 'K' => 10, 'A' => 1
         ];
 
         foreach ($suits as $suit) {
@@ -31,5 +31,26 @@ class Deck
     public function draw(): ?Card
     {
         return array_shift($this->cards);
+    }
+
+    public function getCards(): array
+    {
+        return $this->cards;
+    }
+
+    public function drawMultipleCards(int $number): array
+    {
+        $drawnCards = [];
+
+        for ($i = 0; $i < $number; $i++) {
+            $card = $this->draw();
+            if ($card !== null) {
+                $drawnCards[] = $card;
+            } else {
+                break;
+            }
+        }
+
+        return $drawnCards;
     }
 }

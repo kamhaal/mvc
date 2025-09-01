@@ -73,26 +73,57 @@ I detta kursmoment har jag utvecklat spelet <strong>Kortspel 21</strong> i Symfo
 </p>
 
 <h3>Vad jag har jobbat med i koden</h3>
-<ul>
-    <li>Skapade nya kontroller för att hantera spelets rutter: <code>game_start</code>, <code>game_play</code>, <code>game_hit</code>, <code>game_stand</code> och <code>game_new</code>.</li>
-    <li>Implementerade objektorienterade klasser: <code>Card</code>, <code>Deck</code>, <code>Hand</code>, <code>Player</code>, <code>Dealer</code> och <code>Game</code>.</li>
-    <li>Byggde spelmekaniken i <code>Game</code>-klassen för att hantera turordning, poängräkning och vinnare.</li>
-    <li>Använde PHP-sessioner för att lagra spelets tillstånd mellan sidladdningar.</li>
-    <li>Skapade Twig-templates för landningssida (<code>index.html.twig</code>), spelvy (<code>play.html.twig</code>) och dokumentationssida (<code>doc.html.twig</code>).</li>
-    <li>Implementerade loopar och villkorssatser i Twig för att visa kort och hantera spelstatus.</li>
-</ul>
+<p>
+Fixade alla routes och kontroller så att spelet kunde starta, man kan dra kort, stanna och börja om.</p>
+<p>
+Byggde upp ett system med klasser för korten, leken, spelaren och dealern. All logik för spelet sitter i en Game-klass.</p>
+<p>
+Använde sessions för att komma ihåg spelets tillstånd mellan sidladdningarna. Det var lite knepigt att få till, men funkar nu.</p>
+<p>
+Skapade vyerna med Twig. Fick loopa ut korten och göra villkorssatser för att visa olika knappar och meddelanden.
+</p>
 
 <p>Vad jag har lärt mig: </p>
-<ul>
-    <li>Hur man strukturerar ett Symfony-projekt enligt MVC-principen för att hålla kontrollern tunn och logiken i separata klasser.</li>
-    <li>Praktisk användning av Twig för att bygga dynamiska vyer med loopar och villkor.</li>
-    <li>Sessionhantering i Symfony för att lagra speldata mellan förfrågningar.</li>
-    <li>Att bryta ner problem i mindre delar med hjälp av flödesschema och pseudokod innan implementation.</li>
-    <li>Hur man kombinerar objektorienterad programmering med webbapplikationer för att skapa en fungerande spelupplevelse.</li>
-</ul>
+<p>Fick en bättre koll på hur man strukturerar ett Symfony-projekt på riktigt.
+</p>
+<p>Förstår sessions bättre nu hur man sparar hela objekt och hämtar dem igen.
+</p>
+<p>Blivit mycket bättre på att använda Twig och skriva tydligare kod.
+</p>
+
+
+<h2>kmom04</h2>
 
 <p>
-Genom detta moment har jag fördjupat min förståelse för Symfony och fått erfarenhet av att bygga ett komplett interaktivt spel från grunden, inklusive spelregler, grafik och logik.
+Det här kmom handlade om enhetstestning med PHPUnit i Symfony. Jag fick i uppdrag att testa mina klasser från kortspelet och nå hög kodtäckning.
+</p>
+
+<h4>Vad jag gjorde:</h4>
+<p>Installerade och konfigurerade PHPUnit med Xdebug för kodtäckning</p>
+<p>Skapade en test suite med 37 testfall.</p>
+<p>Implementerade tester för Card, Deck, Player, Hand, Dealer och Game-klasser</p>
+
+<h4>Vad jag lärde mig:</h4>
+
+<p>
+Hur man skriver effektiva testfall med PHPUnit</p>
+
+<p>
+Vikten av att testa edge cases och olika scenarier</p>
+
+<p>
+Hur man mäter och analyserar kodtäckning</p>
+
+<p>
+Att enhetstester gör koden mer robust och underhållbar</p>
+
+<p>
+Hur man automatisera kodkvalitetskontroller</p>
+
+
+<h4>Resultat:</h4>
+<p>Alla tester passerar och kodtäckningen är godkänd. Har nu en solid testmiljö som gör 
+det enkelt att vidareutveckla kortspelet utan att bryta befintlig funktionalitet.
 </p>
 
 {% endblock %}

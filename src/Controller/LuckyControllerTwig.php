@@ -53,5 +53,4 @@ class LuckyControllerTwig extends AbstractController
             'images' => $img,
         ]);
     }
-
 }
