@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}API Documentation - Card Game{% endblock %}
+
+{% block body %}
+    <div class="docs-container">
+        <h1>🃏 API Documentation - Card Game</h1>
+        
+        <section class="class-doc">
+            <h2>Class: Card</h2>
+            <p class="class-description">Represents a playing card in a card game with suit, rank and value</p>
+            
+            <div>
+                <h3>__construct(string $suit, string $rank, int $value)</h3>
+                <p>Constructs a new Card instance with the given suit, rank and value.</p>
+                <div class="params">
+                    <strong>Parameters:</strong>
+                    <ul>
+                        <li><code>$suit</code> - The suit of the card (Hearts, Diamonds, Clubs, Spades)</li>
+                        <li><code>$rank</code> - The rank of the card (Ace, 2, 3, ..., King)</li>
+                        <li><code>$value</code> - The numeric value for scoring purposes</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div>
+                <h3>getSuit(): string</h3>
+                <p>Returns the suit of the card.</p>
+                <div class="returns">
+                    <strong>Returns:</strong> string - The suit name
+                </div>
+            </div>
+            
+            <div>
+                <h3>getRank(): string</h3>
+                <p>Returns the rank of the card.</p>
+                <div class="returns">
+                    <strong>Returns:</strong> string - The rank value
+                </div>
+            </div>
+            
+            <div>
+                <h3>getValue(): int</h3>
+                <p>Returns the numeric value of the card used for scoring.</p>
+                <div class="returns">
+                    <strong>Returns:</strong> int - The numeric value
+                </div>
+            </div>
+            
+            <div>
+                <h3>__toString(): string</h3>
+                <p>Returns a formal string representation of the card.</p>
+                <div class="returns">
+                    <strong>Returns:</strong> string - Format: "Rank of Suit" (e.g., "Ace of Spades")
+                </div>
+            </div>
+            
+            <div>
+                <h3>getAsString(): string</h3>
+                <p>Returns a compact string representation with suit symbols.</p>
+                <div class="returns">
+                    <strong>Returns:</strong> string - Format: "RankSymbol" (e.g., "A♠", "10♥")
+                </div>
+            </div>
+        </section>
+        
+        <section class="class-doc">
+            <h2>Class: Deck</h2>
+            <p class="class-description">Represents a deck of 52 playing cards</p>
+            
+            <div>
+                <h3>__construct()</h3>
+                <p>Creates a new deck with 52 cards in standard order.</p>
+            </div>
+            
+            <div>
+                <h3>shuffle(): void</h3>
+                <p>Shuffles the deck to randomize card order.</p>
+            </div>
+            
+            <div>
+                <h3>draw(): ?Card</h3>
+                <p>Draws and returns the top card from the deck.</p>
+                <div class="returns">
+                    <strong>Returns:</strong> Card|null - The drawn card or null if deck is empty
+                </div>
+            </div>
+        </section>
+    </div>
+    
+{% endblock %}
