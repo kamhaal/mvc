@@ -126,4 +126,20 @@ Hur man automatisera kodkvalitetskontroller</p>
 det enkelt att vidareutveckla kortspelet utan att bryta befintlig funktionalitet.
 </p>
 
+
+<h2>kmom04</h2>
+<p>Jag har byggt en webbapplikation i Symfony där man kan hantera böcker i ett bibliotek. Applikationen har stöd för att lägga till nya böcker, visa alla böcker, redigera information och ta bort böcker. Varje bok har titel, författare, ISBN och möjlighet att ladda upp en bild.</p>
+<p>
+Jag skapade en databas med en bok-tabell och kopplade ihop den med en Book-klass i Symfony. För att användaren enkelt ska kunna arbeta med böckerna byggde jag formulär för att lägga till och redigera information. Där går det också att ladda upp en bild till boken.
+</p>
+
+<p>
+För utseendet använde jag Twig-mallar. Det finns en startsida där alla böcker visas i en tabell, en sida för att se detaljer om en bok samt formulär för att skapa och redigera böcker. Bilder visas om de finns, annars hanteras det snyggt utan fel. Jag lade också till knappar och länkar för att enkelt kunna navigera runt i applikationen.
+</p>
+
+<p>
+All logik ligger i en controller som sköter allt. När man skapar, ändrar eller raderar böcker får man feedback via små meddelanden på sidan.
+</p>
+<p>Jag har förstått hur man bygger upp en hel applikation från grunden med databas, formulär, kontroller och mallar. Jag har lärt mig att ladda upp och visa bilder, hur man skyddar applikationen</p>
+
 {% endblock %}

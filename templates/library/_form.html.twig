@@ -1,0 +1,34 @@
+{{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.title) }}
+        {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.title) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.isbn) }}
+        {{ form_widget(form.isbn, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.isbn) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.author) }}
+        {{ form_widget(form.author, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.author) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.imageFile) }}
+        {{ form_widget(form.imageFile, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.imageFile) }}
+        
+        {% if book.image %}
+            <div>
+                <img src="{{ asset('uploads/images/' ~ book.image) }}" alt="{{ book.title }}" class="book-image img-thumbnail" style="max-width: 200px;">
+                <p class="text-muted">Current image</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

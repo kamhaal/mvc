@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Library{% endblock %}
+
+{% block body %}
+    <h1>Library</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>ISBN</th>
+                <th>Author</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.isbn }}</td>
+                <td>{{ book.author }}</td>
+                <td>
+                    {% if book.image %}
+                        <img src="{{ asset('uploads/images/' ~ book.image) }}" alt="{{ book.title }}" style="max-width: 100px;" class="img-thumbnail">
+                    {% else %}
+                        <span class="text-muted">No image</span>
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{{ path('library_show', {'id': book.id}) }}" >Show</a>
+                    <a href="{{ path('library_edit', {'id': book.id}) }}" >Edit</a>
+                    {{ include('library/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">No books found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('library_new') }}" class="btn btn-success">Create new book</a>
+{% endblock %}
