@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\Book;
+use App\Library\Book;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
