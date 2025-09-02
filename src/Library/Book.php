@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity;
+namespace App\Library;
 
 use App\Repository\BookRepository;
 use Doctrine\ORM\Mapping as ORM;
