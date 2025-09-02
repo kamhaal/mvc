@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Library\Book;
+use App\Entity\Book;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;

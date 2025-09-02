@@ -5,7 +5,7 @@ namespace App\Library;
 use App\Repository\BookRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Library(repositoryClass: BookRepository::class)]
+#[ORM\Entity(repositoryClass: BookRepository::class)]
 class Book
 {
     #[ORM\Id]
