@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="35" assertions="247" errors="0" warnings="0" failures="0" skipped="0" time="0.018678">
+    <testsuite name="Card Game Test Suite" tests="35" assertions="247" errors="0" warnings="0" failures="0" skipped="0" time="0.018678">
+      <testsuite name="Tests\CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/CardTest.php" tests="4" assertions="8" errors="0" warnings="0" failures="0" skipped="0" time="0.002982">
+        <testcase name="testCardHasSuitAndValue" class="Tests\CardTest" classname="Tests.CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/CardTest.php" line="10" assertions="3" time="0.002254"/>
+        <testcase name="testCardToString" class="Tests\CardTest" classname="Tests.CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/CardTest.php" line="18" assertions="1" time="0.000197"/>
+        <testcase name="testCardGetAsString" class="Tests\CardTest" classname="Tests.CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/CardTest.php" line="24" assertions="1" time="0.000198"/>
+        <testcase name="testCardValueTypes" class="Tests\CardTest" classname="Tests.CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/CardTest.php" line="30" assertions="3" time="0.000333"/>
+      </testsuite>
+      <testsuite name="Tests\Game\CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Game/CardTest.php" tests="5" assertions="13" errors="0" warnings="0" failures="0" skipped="0" time="0.001850">
+        <testcase name="testCardCreation" class="Tests\Game\CardTest" classname="Tests.Game.CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Game/CardTest.php" line="10" assertions="4" time="0.000332"/>
+        <testcase name="testToString" class="Tests\Game\CardTest" classname="Tests.Game.CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Game/CardTest.php" line="20" assertions="1" time="0.000245"/>
+        <testcase name="testGetAsString" class="Tests\Game\CardTest" classname="Tests.Game.CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Game/CardTest.php" line="27" assertions="1" time="0.000218"/>
+        <testcase name="testGetAsStringWithAllSuits" class="Tests\Game\CardTest" classname="Tests.Game.CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Game/CardTest.php" line="34" assertions="4" time="0.000812"/>
+        <testcase name="testCardValueTypes" class="Tests\Game\CardTest" classname="Tests.Game.CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Game/CardTest.php" line="45" assertions="3" time="0.000243"/>
+      </testsuite>
+      <testsuite name="App\Tests\Unit\Card\CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Card/CardTest.php" tests="8" assertions="195" errors="0" warnings="0" failures="0" skipped="0" time="0.002313">
+        <testcase name="testCreateCard" class="App\Tests\Unit\Card\CardTest" classname="App.Tests.Unit.Card.CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Card/CardTest.php" line="16" assertions="4" time="0.000221"/>
+        <testcase name="testCardToString" class="App\Tests\Unit\Card\CardTest" classname="App.Tests.Unit.Card.CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Card/CardTest.php" line="29" assertions="1" time="0.000190"/>
+        <testcase name="testCardGetAsString" class="App\Tests\Unit\Card\CardTest" classname="App.Tests.Unit.Card.CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Card/CardTest.php" line="39" assertions="1" time="0.000201"/>
+        <testcase name="testCardNumericValue" class="App\Tests\Unit\Card\CardTest" classname="App.Tests.Unit.Card.CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Card/CardTest.php" line="49" assertions="1" time="0.000204"/>
+        <testcase name="testCardEdgeCases" class="App\Tests\Unit\Card\CardTest" classname="App.Tests.Unit.Card.CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Card/CardTest.php" line="59" assertions="2" time="0.000202"/>
+        <testcase name="testAllSuitSymbols" class="App\Tests\Unit\Card\CardTest" classname="App.Tests.Unit.Card.CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Card/CardTest.php" line="73" assertions="4" time="0.000234"/>
+        <testcase name="testDifferentRanks" class="App\Tests\Unit\Card\CardTest" classname="App.Tests.Unit.Card.CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Card/CardTest.php" line="91" assertions="26" time="0.000297"/>
+        <testcase name="testAllCardCombinations" class="App\Tests\Unit\Card\CardTest" classname="App.Tests.Unit.Card.CardTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Card/CardTest.php" line="107" assertions="156" time="0.000763"/>
+      </testsuite>
+      <testsuite name="App\Tests\Unit\Deck\DeckTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Deck/DeckTest.php" tests="3" assertions="6" errors="0" warnings="0" failures="0" skipped="0" time="0.005690">
+        <testcase name="testCreateDeck" class="App\Tests\Unit\Deck\DeckTest" classname="App.Tests.Unit.Deck.DeckTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Deck/DeckTest.php" line="17" assertions="2" time="0.000923"/>
+        <testcase name="testShuffleDeck" class="App\Tests\Unit\Deck\DeckTest" classname="App.Tests.Unit.Deck.DeckTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Deck/DeckTest.php" line="28" assertions="2" time="0.004443"/>
+        <testcase name="testDrawCard" class="App\Tests\Unit\Deck\DeckTest" classname="App.Tests.Unit.Deck.DeckTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Deck/DeckTest.php" line="44" assertions="2" time="0.000324"/>
+      </testsuite>
+      <testsuite name="App\Tests\Unit\Game\DealerTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/DealerTest.php" tests="2" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.001615">
+        <testcase name="testCreateDealer" class="App\Tests\Unit\Game\DealerTest" classname="App.Tests.Unit.Game.DealerTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/DealerTest.php" line="11" assertions="2" time="0.001129"/>
+        <testcase name="testDealerShouldDraw" class="App\Tests\Unit\Game\DealerTest" classname="App.Tests.Unit.Game.DealerTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/DealerTest.php" line="19" assertions="2" time="0.000486"/>
+      </testsuite>
+      <testsuite name="App\Tests\Unit\Game\GameTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/GameTest.php" tests="5" assertions="7" errors="0" warnings="0" failures="0" skipped="0" time="0.002365">
+        <testcase name="testCreateGame" class="App\Tests\Unit\Game\GameTest" classname="App.Tests.Unit.Game.GameTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/GameTest.php" line="11" assertions="3" time="0.000719"/>
+        <testcase name="testGameInitialStatus" class="App\Tests\Unit\Game\GameTest" classname="App.Tests.Unit.Game.GameTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/GameTest.php" line="20" assertions="1" time="0.000376"/>
+        <testcase name="testPlayerHit" class="App\Tests\Unit\Game\GameTest" classname="App.Tests.Unit.Game.GameTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/GameTest.php" line="27" assertions="1" time="0.000372"/>
+        <testcase name="testPlayerStand" class="App\Tests\Unit\Game\GameTest" classname="App.Tests.Unit.Game.GameTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/GameTest.php" line="37" assertions="1" time="0.000341"/>
+        <testcase name="testGetWinner" class="App\Tests\Unit\Game\GameTest" classname="App.Tests.Unit.Game.GameTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/GameTest.php" line="46" assertions="1" time="0.000558"/>
+      </testsuite>
+      <testsuite name="App\Tests\Unit\Game\HandTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/HandTest.php" tests="5" assertions="9" errors="0" warnings="0" failures="0" skipped="0" time="0.001198">
+        <testcase name="testCreateHand" class="App\Tests\Unit\Game\HandTest" classname="App.Tests.Unit.Game.HandTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/HandTest.php" line="11" assertions="3" time="0.000279"/>
+        <testcase name="testAddCardToHand" class="App\Tests\Unit\Game\HandTest" classname="App.Tests.Unit.Game.HandTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/HandTest.php" line="20" assertions="2" time="0.000234"/>
+        <testcase name="testHandValueCalculation" class="App\Tests\Unit\Game\HandTest" classname="App.Tests.Unit.Game.HandTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/HandTest.php" line="31" assertions="1" time="0.000221"/>
+        <testcase name="testHandValueWithAces" class="App\Tests\Unit\Game\HandTest" classname="App.Tests.Unit.Game.HandTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/HandTest.php" line="41" assertions="1" time="0.000233"/>
+        <testcase name="testGetAsString" class="App\Tests\Unit\Game\HandTest" classname="App.Tests.Unit.Game.HandTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/HandTest.php" line="53" assertions="2" time="0.000231"/>
+      </testsuite>
+      <testsuite name="App\Tests\Unit\Game\PlayerTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/PlayerTest.php" tests="3" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.000665">
+        <testcase name="testCreatePlayer" class="App\Tests\Unit\Game\PlayerTest" classname="App.Tests.Unit.Game.PlayerTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/PlayerTest.php" line="11" assertions="3" time="0.000217"/>
+        <testcase name="testAddCardToPlayer" class="App\Tests\Unit\Game\PlayerTest" classname="App.Tests.Unit.Game.PlayerTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/PlayerTest.php" line="20" assertions="1" time="0.000222"/>
+        <testcase name="testPlayerHandValue" class="App\Tests\Unit\Game\PlayerTest" classname="App.Tests.Unit.Game.PlayerTest" file="/home/kamar/dbwebb-kurser/mvc/me/report/tests/Unit/Game/PlayerTest.php" line="30" assertions="1" time="0.000226"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,34 @@
+build:
+  nodes:
+    analysis:
+      environment:
+        php:
+          version: "8.2"
+      dependencies:
+        before:
+          - composer install --no-interaction
+      tests:
+        override:
+          - command: |
+              XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+      cache:
+        directories:
+          - vendor
+
+checks:
+  php:
+    code_rating: true
+    duplication: true
+    remove_extra_empty_lines: true
+    fix_doc_comments: true
+
+filter:
+  paths:
+    - src/*
+  excluded_paths:
+    - vendor/*
+    - tests/*
+
+tools:
+  external_code_coverage:
+    timeout: 600
