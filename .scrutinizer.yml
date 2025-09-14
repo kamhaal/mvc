@@ -4,9 +4,6 @@ build:
       environment:
         php:
           version: "8.2"
-      dependencies:
-        before:
-          - composer install --no-interaction
       tests:
         override:
           - command: |
@@ -14,3 +11,15 @@ build:
             coverage:
               file: build/logs/clover.xml
               format: clover
+
+checks:
+  php:
+    code_rating: true
+    duplication: true
+
+filter:
+  paths:
+    - src/*
+  excluded_paths:
+    - vendor/*
+    - tests/*
