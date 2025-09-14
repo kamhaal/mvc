@@ -133,3 +133,11 @@ För att köra detta projekt behöver du:
 5. Besök `http://localhost:8000` i din webbläsare.
 
 ---
+
+# MVC-kmom06
+
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kamhaal/mvc/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/kamhaal/mvc/)
+[![Build Status](https://scrutinizer-ci.com/g/kamhaal/mvc/badges/build.png?b=main)](https://scrutinizer-ci.com/g/kamhaal/mvc/)
+[![Code Coverage](https://scrutinizer-ci.com/g/kamhaal/mvc/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/kamhaal/mvc/)
+
+Detta är mitt kmom06 för kursen MVC. Här fixar jag med kodkvalitet, tester och clean code med hjälp av verktygen PhpMetrics och Scrutinizer.
