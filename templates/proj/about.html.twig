@@ -5,9 +5,27 @@
 <h1>About This Project</h1>
 
 <p>
-    This project is part of the course and focuses on creating a Blackjack 21 game.  
-    The player can place bets, manage a balance, and play against the dealer.  
+Jag gjorde ett Blackjack-spel med PHP och objektorientering. Spelet har klasser för kort, kortlek, hand, spelare, dealer och själva spelet. Kortleken har 52 kort och blandas varje gång man startar ett nytt spel. Hand-klassen räknar ut poängen och hanterar ess som kan vara värt 1 eller 14 poäng. Game-klassen styr spelets flöde med funktioner för att dra kort eller stanna. Dealern drar automatiskt kort tills hen har minst 17 poäng. Jag använde session för att komma ihåg spelets tillstånd mellan sidladdningar.
 </p>
+
+<p>
+
+Jag byggde ett webbgränssnitt med Twig-templates och Symfony. Först skriver spelaren sitt namn på startsidan, sedan kommer hen till spelplanen. Under spelet ser spelaren sina kort och poäng, och kan klicka på "Hit" för att dra kort eller "Stand" för att stanna. När spelet är över visas dealerns kort och vem som vann. Jag gjorde även sidor för "Om projektet" och "Dokumentation" med samma navigation.
+</p>
+
+<p>
+
+Spelet följer vanliga Blackjack-regler. Spelaren börjar med två kort och kan dra fler kort. Om spelaren får över 21 poäng förlorar hen direkt. När spelaren stannar drar dealern kort. Vid lika poäng vinner dealern. Spelet hanterar ess korrekt så att de ger bästa möjliga poäng. Spelet har olika lägen som avgör vad spelaren får göra.
+</p>
+
+<p>
+
+Jag gjorde två extra sidor: en "Om"-sida som förklarar projektet, och en "Dokumentation"-sida med spelregler och hur man spelar. Dessa sidor använder samma layout som resten av spelet och finns med i navigationen. Reglerna är skrivna på ett enkelt sätt med punktlistor och numrerade steg.
+</p>
+
+<p>
+
+Projektet gick bra att göra. Det svåraste var att få sessionen att fungera mellan olika sidor, men det löste sig genom att noggrant spara spelet i sessionen. Objektorienteringen gjorde koden lättare att förstå och ändra i. MVC-strukturen passade perfekt för att separera spelets logik från webbgränssnittet. 
 
 <p>
     The website has a separate style and navigation from the report site, to make it feel like a standalone project.
