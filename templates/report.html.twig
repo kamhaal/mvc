@@ -141,4 +141,19 @@ För utseendet använde jag Twig-mallar. Det finns en startsida där alla böcke
 </p>
 <p>Jag har förstått hur man bygger upp en hel applikation från grunden med databas, formulär, kontroller och mallar. Jag har lärt mig att ladda upp och visa bilder, hur man skyddar applikationen</p>
 
+<h2>Kmom06</h2>
+
+<p> Jag har arbetat med kodkvalitet i mitt projekt genom att använda verktygen PhpMetrics och Scrutinizer. PhpMetrics gav mig information om komplexitet, cohesion och coupling. </p>
+<p>Jag kunde se att vissa controllers var ganska komplexa, att Library hade låg cohesion och att det fanns starka beroenden mellan Game och Dice som kan förenklas.</p>
+
+<p> Scrutinizer analyserade min kod i GitHub och visade att jag hade duplicerad kod, några metoder som var för långa och att test coverage var låg. Från början var min coverage ungefär 17%. Jag skrev då fler tester, särskilt för Dice-klasserna, som nu har 100% coverage, och för Game som ökade till cirka 83%. När jag pushade dessa ändringar ökade min totala coverage till 23%.
+
+<p> Jag har lagt in Scrutinizer-badges för kvalitet, byggstatus och coverage både i min rapport och i README.md. På så sätt kan man direkt se status för projektet.</p>
+
+<p> Att arbeta på det här sättet med kodkvalitet fungerar bra. Fördelen är att man får renare och stabilare kod som är enklare att förstå och bygga vidare på. 
+</p>
+
+<p>
+Andra sätt att jobba mot clean code är att använda kodgranskning, automatiska linters och CI/CD som alltid kör tester och analyser när man pushar kod.
+</p>
 {% endblock %}

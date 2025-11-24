@@ -37,7 +37,6 @@ class Hand
         return $total;
     }
 
-    // Hand.php
     public function getAsString(): string
     {
         $cards = [];
@@ -45,5 +44,9 @@ class Hand
             $cards[] = $card->getAsString();
         }
         return implode(' ', $cards);
+    }
+    public function clear(): void
+    {
+        $this->cards = [];
     }
 }

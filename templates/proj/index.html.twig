@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Welcome to My Blackjack Project</h1>
+
+<p>
+    This is my project for the course MVC.  
+    The focus is on implementing the game <b>Blackjack 21</b>
+</p>
+
+<form method="post" action="{{ path('proj_start') }}">
+    <label for="player_name">Enter your name:</label>
+    <input type="text" id="player_name" name="player_name" required>
+    <button type="submit">Start Game</button>
+</form>
+
+<nav>
+    <a href="{{ path('proj_play') }}">Play Blackjack</a> |
+    <a href="{{ path('proj_about') }}">About Project</a> |
+    <a href="{{ path('proj_doc') }}">Documentation</a>
+</nav>
+
+
+
+{% endblock %}

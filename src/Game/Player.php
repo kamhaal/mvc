@@ -4,18 +4,15 @@ namespace App\Game;
 
 class Player
 {
-    protected string $name;
-    protected Hand $hand;
+    private Hand $hand;
+    private string $name;
+    private int $balance = 0;
 
-    public function __construct(string $name)
+    public function __construct(string $name, int $balance = 100)
     {
-        $this->name = $name;
         $this->hand = new Hand();
-    }
-
-    public function getName(): string
-    {
-        return $this->name;
+        $this->name = $name;
+        $this->balance = $balance;
     }
 
     public function getHand(): Hand
@@ -23,8 +20,27 @@ class Player
         return $this->hand;
     }
 
-    public function addCard(Card $card): void
+    public function getName(): string
     {
-        $this->hand->add($card);
+        return $this->name;
+    }
+
+    public function getBalance(): int
+    {
+        return $this->balance;
+    }
+
+    public function deposit(int $amount): void
+    {
+        $this->balance += $amount;
+    }
+
+    public function withdraw(int $amount): bool
+    {
+        if ($amount > $this->balance) {
+            return false;
+        }
+        $this->balance -= $amount;
+        return true;
     }
 }

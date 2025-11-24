@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<h1>Blackjack Documentation</h1>
+
+<h2>Rules</h2>
+<ul>
+    <li>Goal: get as close to 21 as possible without going over.</li>
+    <li>Aces are 1 or 14 points.</li>
+    <li>Dealer must draw until 17 or more.</li>
+    <li>Dealer wins ties.</li>
+</ul>
+
+<h2>How to Play</h2>
+<ol>
+    <li>Enter your player name and balance.</li>
+    <li>Place a bet.</li>
+    <li>Choose to Hit (draw card) or Stand.</li>
+    <li>Dealer plays automatically.</li>
+    <li>Balance updates based on result.</li>
+</ol>
+
+<a href="{{ path('proj_index') }}">Back to Project</a>
+{% endblock %}

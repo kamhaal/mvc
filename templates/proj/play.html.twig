@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Blackjack 21</h1>
+
+<p><b>Player:</b> {{ game.getPlayer().getName() }}</p>
+<p><b>Balance:</b> {{ game.getPlayer().getBalance() }}</p>
+<p><b>Your cards:</b> {{ game.getPlayer().getHand().getAsString() }}
+   ({{ game.getPlayer().getHand().getValue() }})</p>
+
+{% if game.getStatus() == 'player_turn' %}
+    <p>
+        <a href="{{ path('proj_hit') }}">Hit</a> |
+        <a href="{{ path('proj_stand') }}">Stand</a>
+    </p>
+{% else %}
+    <p><b>Dealer's cards:</b> {{ game.getDealer().getHand().getAsString() }}
+       ({{ game.getDealer().getHand().getValue() }})</p>
+    <p>
+        {% if game.getPlayer().getHand().getValue() > 21 %}
+            You busted! Dealer wins.
+        {% elseif game.getDealer().getHand().getValue() > 21 %}
+            Dealer busted! You win.
+        {% elseif game.getPlayer().getHand().getValue() > game.getDealer().getHand().getValue() %}
+            You win!
+        {% elseif game.getPlayer().getHand().getValue() == game.getDealer().getHand().getValue() %}
+            It's a tie. Dealer wins by rule.
+        {% else %}
+            Dealer wins.
+        {% endif %}
+    </p>
+    <p>
+        <a href="{{ path('proj_new') }}">New Game</a> |
+        <a href="{{ path('proj_index') }}">Back Home</a>
+    </p>
+{% endif %}
+{% endblock %}

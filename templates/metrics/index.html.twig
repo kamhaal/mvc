@@ -7,40 +7,31 @@
 
 <h2>Introduktion</h2>
 <p>
-  För att analysera kodkvalitet använder vi de sex C:na:
-</p>
+De sex C:na för kodkvalitet är:
 <ul>
-  <li><b>Codestyle</b> – enhetlig stil gör koden mer läsbar.</li>
-  <li><b>Coverage</b> – hur stor andel av koden som testas.</li>
-  <li><b>Complexity</b> – hur komplexa metoder/klasser är.</li>
-  <li><b>Cohesion</b> – hur väl en klass hänger ihop.</li>
+  <li><b>Codestyle</b> – enhetlig kodstil gör koden lättare att läsa.</li>
+  <li><b>Coverage</b> – hur stor andel av koden som testas (min kod: 23%).</li>
+  <li><b>Complexity</b> – komplexa metoder är svårare att förstå (Phpmetrics visade snitt CC ≈ 2.7).</li>
+  <li><b>Cohesion</b> – hur väl en klass/metoder hänger ihop.</li>
   <li><b>Coupling</b> – hur beroende moduler är av varandra.</li>
-  <li><b>CRAP</b> – kombinerar komplexitet och test coverage.</li>
-  <li><b>Code Smell</b> – extra (7:e C), varningar från linters.</li>
+  <li><b>CRAP</b> – kombination av komplexitet och låg coverage.</li>
+  <li><b>Code Smell</b> – extra varningar, t.ex. duplicerad kod.</li>
 </ul>
+</p>
 
 <h2>Phpmetrics</h2>
-<p>
-  Analysen med <code>phpmetrics</code> visade några problemområden:
-</p>
-<ul>
-  <li>Hög komplexitet i vissa Controller-klasser.</li>
-  <li>Låg cohesion i delar av Library.</li>
-  <li>Relativt hög coupling mellan Game och Dice.</li>
-</ul>
-<p>
-  Exempel på visualisering (treemap, coupling-diagram etc.) hämtas från <code>build/phpmetrics/</code>.
-</p>
+<p>Exempel på treemap från analysen:</p>
+<img src="{{ asset('img/phpmetrics-treemap.png') }}" alt="Phpmetrics treemap">
 
 <h2>Scrutinizer</h2>
 <p>
-  Scrutinizer rapporterade följande förbättringspunkter:
-</p>
+Analysen visade:
 <ul>
   <li>Duplicerad kod i vissa controllers.</li>
-  <li>Långa metoder som borde brytas ner.</li>
-  <li>Generellt låg coverage (tidigare 17%).</li>
+  <li>Långa metoder som borde delas upp.</li>
+  <li>Låg coverage (från 17%, nu 23%).</li>
 </ul>
+</p>
 
 <p>Badges:</p>
 <p>
@@ -56,58 +47,46 @@
 </p>
 
 <h2>Förbättringar</h2>
-<p>
-  Jag genomförde flera förbättringar:
-</p>
 <ul>
-  <li>Lade till tester för <code>Dice</code>, <code>DiceGraphic</code>, <code>DiceHand</code> → nu 100% coverage.</li>
-  <li>Förbättrade tester för <code>Game</code> → 83% coverage.</li>
-  <li>Fixade namespace och enklare test för <code>BookType</code>.</li>
+  <li>Lagt till tester för Dice → coverage 100%.</li>
+  <li>Förbättrat tester för Game → coverage 83%.</li>
+  <li>Fixat namespace för BookType och lagt till test.</li>
 </ul>
 
 <h2>Resultat</h2>
-<table border="1" cellpadding="5">
+<table cellpadding="5">
   <tr>
     <th>Metrik</th>
     <th>Före</th>
     <th>Efter</th>
-    <th>Koppling till 6C</th>
+    <th>Koppling</th>
   </tr>
   <tr>
-    <td>Coverage (totalt)</td>
+    <td>Coverage</td>
     <td>17%</td>
-    <td>~20% (Dice 100%, Game 83%, Library 46%)</td>
+    <td>23%</td>
     <td>Coverage</td>
   </tr>
   <tr>
-    <td>Dice-klasser</td>
+    <td>Dice</td>
     <td>0%</td>
     <td>100%</td>
     <td>Coverage, Complexity</td>
   </tr>
   <tr>
-    <td>Game-klasser</td>
+    <td>Game</td>
     <td>80%</td>
     <td>83%</td>
     <td>Coverage</td>
-  </tr>
-  <tr>
-    <td>Duplicering (Scrutinizer)</td>
-    <td>9%</td>
-    <td>Minskat</td>
-    <td>Code Smell</td>
   </tr>
 </table>
 
 <h2>Diskussion</h2>
 <p>
-  Det går absolut att jobba aktivt med kodkvalitet och "clean code". Fördelar är mer
-  lättläst och testbar kod, medan en nackdel kan vara att det tar tid att skriva tester.
-  På lång sikt sparar man dock tid eftersom buggar hittas tidigare.
-</p>
-<p>
-  Andra möjligheter är att införa automatiserade kodformatters (CS Fixer), linters,
-  samt CI/CD-flöden som alltid kör tester och kodanalyser vid varje push.
+Att aktivt jobba med kodkvalitet fungerar bra. Fördelar är renare kod, bättre tester
+och färre buggar. Nackdelar är att det tar lite extra tid.  
+Andra sätt att jobba mot clean code är att använda automatiska linters, kodgranskning
+och CI/CD som alltid kör tester.
 </p>
 
 {% endblock %}

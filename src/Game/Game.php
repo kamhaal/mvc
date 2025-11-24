@@ -7,16 +7,45 @@ class Game
     private Deck $deck;
     private Player $player;
     private Dealer $dealer;
-    private string $status = "player_turn";
+    private string $status = 'player_turn';
 
-    public function __construct()
+    public function __construct(string $playerName, int $balance = 100)
     {
         $this->deck = new Deck();
-        $this->deck->shuffle();
-
-        $this->player = new Player("Player");
+        $this->player = new Player($playerName, $balance);
         $this->dealer = new Dealer();
+        $this->startNewRound();
     }
+
+    public function startNewRound(): void
+    {
+        $this->deck->shuffle();
+        $this->player->getHand()->clear();
+        $this->dealer->getHand()->clear();
+        $this->status = 'player_turn';
+
+        $this->player->getHand()->add($this->deck->draw());
+        $this->player->getHand()->add($this->deck->draw());
+        $this->dealer->getHand()->add($this->deck->draw());
+        $this->dealer->getHand()->add($this->deck->draw());
+    }
+
+    public function hit(): void
+    {
+        $this->player->getHand()->add($this->deck->draw());
+        if ($this->player->getHand()->getValue() > 21) {
+            $this->status = 'game_over';
+        }
+    }
+
+    public function stand(): void
+    {
+        while ($this->dealer->getHand()->getValue() < 17) {
+            $this->dealer->getHand()->add($this->deck->draw());
+        }
+        $this->status = 'game_over';
+    }
+
 
     public function getPlayer(): Player
     {
@@ -28,56 +57,8 @@ class Game
         return $this->dealer;
     }
 
-    public function getDeck(): Deck
-    {
-        return $this->deck;
-    }
-
     public function getStatus(): string
     {
         return $this->status;
-    }
-
-    public function playerHit(): void
-    {
-        $this->player->addCard($this->deck->draw());
-        if ($this->player->getHand()->getValue() > 21) {
-            $this->status = "finished";
-        }
-    }
-
-    public function playerStand(): void
-    {
-        $this->status = "dealer_turn";
-        $this->dealerTurn();
-    }
-
-    private function dealerTurn(): void
-    {
-        while ($this->dealer->shouldDraw()) {
-            $this->dealer->addCard($this->deck->draw());
-        }
-        $this->status = "finished";
-    }
-
-    public function getWinner(): ?string
-    {
-        if ($this->status !== "finished") {
-            return null;
-        }
-
-        $p = $this->player->getHand()->getValue();
-        $d = $this->dealer->getHand()->getValue();
-
-        if ($p > 21) {
-            return "Dealer";
-        }
-        if ($d > 21) {
-            return "Player";
-        }
-        if ($d >= $p) {
-            return "Dealer";
-        }
-        return "Player";
     }
 }
